@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace FPSShooter.Player
 {
     public abstract class Player : IMovable
     {
-        public virtual void Move()
+        private Vector3 position;
+        public virtual void OnMove()
         {
 
         }

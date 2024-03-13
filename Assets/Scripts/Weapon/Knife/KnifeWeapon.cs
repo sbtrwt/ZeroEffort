@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPSShooter.Interfaces
+namespace FPSShooter.Weapon.Knife
 {
-    public interface IMovable
+    public class KnifeWeapon : Weapon
     {
-        void OnMove();
     }
 }

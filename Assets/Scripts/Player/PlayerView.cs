@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
-namespace FPSShooter.Interfaces
+namespace FPSShooter.Player
 {
-    public interface IMovable
+    public class PlayerView : MonoBehaviour
     {
-        void OnMove();
     }
 }

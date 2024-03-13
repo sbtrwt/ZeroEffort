@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPSShooter.Interfaces
+namespace Assets.Scripts.Enemy
 {
-    public interface IMovable
+    public class EnemyController
     {
-        void OnMove();
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FPSShooter.Interfaces
 {
-    public interface IMovable
+    public interface ICollectable
     {
-        void OnMove();
+        public abstract void OnCollect();
     }
 }

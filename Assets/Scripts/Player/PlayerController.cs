@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPSShooter.Interfaces
+namespace FPSShooter.Player
 {
-    public interface IMovable
+    public class PlayerController
     {
-        void OnMove();
     }
 }

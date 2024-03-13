@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPSShooter.Interfaces
+namespace FPSShooter.Enemy.Zombie
 {
-    public interface IMovable
+    public class ZombieEnemyController : EnemyController
     {
-        void OnMove();
     }
 }

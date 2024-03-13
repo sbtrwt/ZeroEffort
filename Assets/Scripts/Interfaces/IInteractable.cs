@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FPSShooter.Interfaces
 {
-    public interface IMovable
+    public interface IInteractable
     {
-        void OnMove();
+        public abstract void OnInteract();
     }
 }

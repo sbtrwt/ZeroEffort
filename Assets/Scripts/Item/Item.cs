@@ -1,7 +1,7 @@
 ﻿
 namespace FPSShooter.Item
 {
-    public class ItemService
+    public abstract class Item
     {
     }
 }
