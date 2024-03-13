@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine;
 
-namespace FPSShooter.Interfaces
+namespace FPSShooter.Player
 {
-    public interface IMovable
+    [Serializable]
+    public class PlayerSO
     {
-        void OnMove(Vector3 target);
+        public int ID;
+        public PlayerView PlayerView;
     }
 }
