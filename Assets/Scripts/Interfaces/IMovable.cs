@@ -9,6 +9,6 @@ namespace FPSShooter.Interfaces
 {
     public interface IMovable
     {
-        void OnMove(Vector3 target);
+        void OnMove(Vector2 target);
     }
 }

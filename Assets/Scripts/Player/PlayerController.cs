@@ -21,10 +21,10 @@ namespace FPSShooter.Player
             playerView.SetController(this);
         }
 
-        public void OnMove(Vector3 target)
+        public void OnMove(Vector2 target)
         {
             player.OnMove(target);
-            playerView.SetPosition(target);
+            playerView.SetPosition(player.Position);
         }
     }
 }

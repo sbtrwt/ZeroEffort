@@ -18,9 +18,9 @@ namespace FPSShooter.Player
                 position = value;
             }
         }
-        public virtual void OnMove(Vector3 target)
+        public virtual void OnMove(Vector2 target)
         {
-            position += target * Time.deltaTime * speed;
+            position += new Vector3(target.x,target.y) * Time.deltaTime * speed;
         }
 
 

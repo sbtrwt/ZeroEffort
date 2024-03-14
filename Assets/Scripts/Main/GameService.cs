@@ -14,6 +14,10 @@ namespace FPSShooter.Main
             serviceLocator = new ServiceLocator(serviceLocatorData);
             serviceLocator.Start();
         }
+        private void Update()
+        {
+            serviceLocator.Update();
+        }
     }
 
 }

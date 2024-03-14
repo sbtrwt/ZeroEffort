@@ -1,6 +1,13 @@
 
+using FPSShooter.Player;
+using System;
 
-public class ServiceLocatorModel 
+namespace FPSShooter.Main
 {
-   //Here add variable of service related ScriptableObjects
+    [Serializable]
+    public class ServiceLocatorModel
+    {
+        //Here add variable of service related ScriptableObjects
+        public PlayerModel PlayerModel;
+    }
 }
