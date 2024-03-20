@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65da2cdc9a929764ba8ab178a3cc6012, type: 3}
   m_Name: HumanPlayer
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 1
   PlayerView: {fileID: 6111463333082370543, guid: b650d4aebd0519f4383f8488588bacc2,
     type: 3}
+  movementSpeed: 10
+  jumpForce: 5

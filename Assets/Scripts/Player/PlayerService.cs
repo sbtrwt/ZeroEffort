@@ -12,18 +12,22 @@ namespace FPSShooter.Player
     {
         private PlayerController playerController;
         private InputService inputService;
+
         public PlayerService(PlayerModel playerModel)
         {
             playerController = new HumanPlayerController(playerModel);
         }
+
         public void InjectDependencies(InputService inputService)
         {
             this.inputService = inputService;
-           
+
         }
+
         public void Init()
         {
-            inputService.SetOnMove(playerController.OnMove);
+            //inputService.SetOnMove(playerController.OnMove);
+            //inputService.SetOnJump(playerController.OnJump);
         }
 
     }

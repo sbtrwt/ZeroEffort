@@ -1,30 +1,55 @@
-﻿using FPSShooter.Interfaces;
-using FPSShooter.Player.Human;
+﻿using FPSShooter.InputSystem;
+using FPSShooter.Interfaces;
 using UnityEngine;
 
 namespace FPSShooter.Player
 {
-    public class PlayerController: IMovable
+    public class PlayerController : IMovable
     {
-        private Player player;
         private PlayerView playerView;
         private PlayerModel playerModel;
+
         public PlayerController(PlayerModel model)
         {
             this.playerModel = model;
-            player = new HumanPlayer();
             InitView();
+
+            InputService.OnJump += InputService_OnJump;
+            InputService.OnMove += InputService_OnMove;
         }
+
+        private void InputService_OnMove(Vector2 moveDelta)
+        {
+            OnMove(moveDelta);
+        }
+
+        private void InputService_OnJump()
+        {
+            OnJump();
+        }
+
         public void InitView()
         {
-            playerView = Object.Instantiate(playerModel.PlayerSO.PlayerView);
+            PlayerView playerPrefab = playerModel.PlayerSO.PlayerView;
+            playerView = Object.Instantiate(playerPrefab, playerPrefab.transform.position, playerPrefab.transform.rotation);
             playerView.SetController(this);
         }
 
         public void OnMove(Vector2 target)
         {
-            player.OnMove(target);
-            playerView.SetPosition(player.Position);
+            playerView.Move(target, playerModel.PlayerSO.movementSpeed);
+        }
+
+        public void OnJump()
+        {
+            Debug.Log("calling Jump");
+            playerView.Jump(Vector3.up * playerModel.PlayerSO.jumpForce);
+        }
+
+        ~PlayerController()
+        {
+            InputService.OnJump -= InputService_OnJump;
+            InputService.OnMove -= InputService_OnMove;
         }
     }
 }
