@@ -9,13 +9,28 @@ namespace FPSShooter.Player
         private PlayerView playerView;
         private PlayerModel playerModel;
 
+        private float currSpeed;
+
         public PlayerController(PlayerModel model)
         {
             this.playerModel = model;
             InitView();
 
-            InputService.OnJump += InputService_OnJump;
+            currSpeed = playerModel.PlayerSO.walkSpeed;
+
             InputService.OnMove += InputService_OnMove;
+            InputService.OnSprint += InputService_OnSprint;
+            InputService.OnSprintCanceled += InputService_OnSprintCanceled;
+        }
+
+        private void InputService_OnSprintCanceled()
+        {
+            currSpeed = playerModel.PlayerSO.walkSpeed;
+        }
+
+        private void InputService_OnSprint()
+        {
+            currSpeed = playerModel.PlayerSO.runSpeed;
         }
 
         private void InputService_OnMove(Vector2 moveDelta)
@@ -23,10 +38,6 @@ namespace FPSShooter.Player
             OnMove(moveDelta);
         }
 
-        private void InputService_OnJump()
-        {
-            OnJump();
-        }
 
         public void InitView()
         {
@@ -37,19 +48,19 @@ namespace FPSShooter.Player
 
         public void OnMove(Vector2 target)
         {
-            playerView.Move(target, playerModel.PlayerSO.movementSpeed);
+            playerView.Move(target, currSpeed);
         }
 
-        public void OnJump()
+        public Transform GetCameraTargetTransform()
         {
-            Debug.Log("calling Jump");
-            playerView.Jump(Vector3.up * playerModel.PlayerSO.jumpForce);
+            return playerView.GetCameraTarget();
         }
 
         ~PlayerController()
         {
-            InputService.OnJump -= InputService_OnJump;
             InputService.OnMove -= InputService_OnMove;
+            InputService.OnSprint -= InputService_OnSprint;
+            InputService.OnSprintCanceled -= InputService_OnSprintCanceled;
         }
     }
 }

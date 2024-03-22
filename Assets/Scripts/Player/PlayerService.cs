@@ -30,5 +30,11 @@ namespace FPSShooter.Player
             //inputService.SetOnJump(playerController.OnJump);
         }
 
+        public PlayerController GetPlayerController()
+        {
+            return playerController;
+        }
+
+
     }
 }

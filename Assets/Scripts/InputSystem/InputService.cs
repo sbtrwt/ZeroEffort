@@ -10,21 +10,27 @@ namespace FPSShooter.InputSystem
         private PlayerInputAction playerInputActions;
 
         public static event Action<Vector2> OnMove;
-
-        public static event Action OnJump;
+        public static event Action OnSprint;
+        public static event Action OnSprintCanceled;
         public InputService()
         {
             if (playerInputActions == null)
             {
                 playerInputActions = new PlayerInputAction();
                 playerInputActions.Player.Enable();
-                playerInputActions.Player.Jump.started += Jump_started; ;
+                playerInputActions.Player.Sprint.performed += Sprint_performed;
+                playerInputActions.Player.Sprint.canceled += Sprint_canceled;
             }
         }
 
-        private void Jump_started(InputAction.CallbackContext obj)
+        private void Sprint_canceled(InputAction.CallbackContext obj)
         {
-            OnJump?.Invoke();
+            OnSprintCanceled?.Invoke();
+        }
+
+        private void Sprint_performed(InputAction.CallbackContext obj)
+        {
+            OnSprint?.Invoke();
         }
 
         public void Update()
@@ -39,19 +45,10 @@ namespace FPSShooter.InputSystem
             }
         }
 
-        //public void SetOnMove(Action<Vector3> onMove)
-        //{
-        //    OnMove += onMove;
-        //}
-
-        //public void SetOnJump(Action OnJump)
-        //{
-        //    this.OnJump += OnJump;
-        //}
-
         ~InputService()
         {
-            playerInputActions.Player.Jump.started -= Jump_started;
+            playerInputActions.Player.Sprint.performed -= Sprint_performed;
+            playerInputActions.Player.Sprint.canceled -= Sprint_canceled;
         }
     }
 }

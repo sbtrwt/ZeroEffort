@@ -7,10 +7,8 @@ using UnityEngine;
 
 namespace FPSShooter.Interfaces
 {
-    public interface IMovable
+    public interface IMovable   
     {
         void OnMove(Vector2 target);
-
-        void OnJump();
     }
 }

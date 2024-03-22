@@ -13,7 +13,8 @@ namespace FPSShooter.Player
     {
         public int ID;
         public PlayerView PlayerView;
-        public float movementSpeed;
+        public float walkSpeed;
+        public float runSpeed;
         public float jumpForce;
     }
 }
