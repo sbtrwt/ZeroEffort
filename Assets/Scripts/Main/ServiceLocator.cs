@@ -9,6 +9,7 @@ namespace FPSShooter.Main
     {
         private PlayerService playerService;
         private InputService inputService;
+
         private CameraService cameraService;
         public ServiceLocator(ServiceLocatorModel data)
         {

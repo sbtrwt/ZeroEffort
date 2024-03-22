@@ -38,6 +38,7 @@ namespace FPSShooter.Player
             Vector3 moveDir = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(target.x, 0, target.y);
             transform.position += speed * Time.deltaTime * moveDir;
         }
+
         private void Update()
         {
             xAxis.Update(Time.deltaTime);
