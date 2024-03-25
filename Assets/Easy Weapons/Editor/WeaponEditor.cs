@@ -434,7 +434,6 @@ public class WeaponEditor : Editor
 			weapon.dryFireSound = (AudioClip)EditorGUILayout.ObjectField("Out of Ammo", weapon.dryFireSound, typeof(AudioClip), false);
 		}
 
-
 		// This makes the editor gui re-draw the inspector if values have changed
 		if (GUI.changed)
 			EditorUtility.SetDirty(target);

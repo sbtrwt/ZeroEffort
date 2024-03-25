@@ -25,11 +25,16 @@ namespace FPSShooter.Main
             virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(NORMAL_FOV, EFFECT_FOV, Time.deltaTime * BLAND_SPEED);
         }
 
-        
         private void InputService_OnSprintCanceled()
         {
             virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(EFFECT_FOV, NORMAL_FOV, Time.deltaTime * BLAND_SPEED);
         }
+
+        public void Update()
+        {
+
+        }
+       
 
         public void SetTarget(Transform transform)
         {

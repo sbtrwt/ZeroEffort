@@ -40,6 +40,7 @@ namespace FPSShooter.Main
 
         public void Update()
         {
+            cameraService.Update();
             inputService.Update();
         }
     }

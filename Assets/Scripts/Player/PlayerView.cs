@@ -1,9 +1,4 @@
 ﻿using Cinemachine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace FPSShooter.Player
@@ -21,7 +16,7 @@ namespace FPSShooter.Player
         [SerializeField] protected Transform cameraTarget;
 
         private PlayerController playerController;
-
+        private Vector3 moveInputDalta;
         public void SetController(PlayerController playerController)
         {
             this.playerController = playerController;
@@ -34,29 +29,26 @@ namespace FPSShooter.Player
 
         public void Move(Vector3 target, float speed)
         {
-
+            moveInputDalta = target;
             Vector3 moveDir = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * new Vector3(target.x, 0, target.y);
             transform.position += speed * Time.deltaTime * moveDir;
+
+            bool isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
+            UpdateAnimatorParameters(target.x, target.y, isRunning);
+
         }
 
         private void Update()
         {
             xAxis.Update(Time.deltaTime);
             yAxis.Update(Time.deltaTime);
-
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-
-            // Check if the shift key is pressed
-            bool isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-
-            UpdateAnimatorParameters(horizontalInput, verticalInput, isRunning);
         }
 
         private void LateUpdate()
         {
             cameraTarget.localEulerAngles = new Vector3(yAxis.Value, cameraTarget.localEulerAngles.y, cameraTarget.localEulerAngles.z);
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x,xAxis.Value, transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(0, xAxis.Value, 0);
         }
 
 
