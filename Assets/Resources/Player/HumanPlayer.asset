@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: HumanPlayer
   m_EditorClassIdentifier: 
   ID: 1
-  PlayerView: {fileID: 2178794686865832138, guid: 34ab98ed61701134b82d32dc2a91f151,
-    type: 3}
+  PlayerView: {fileID: 8803845476505932224, guid: 26ae7f1fca8299d4b90c293c7b8419eb, type: 3}
   walkSpeed: 1
   runSpeed: 6
   jumpForce: 5

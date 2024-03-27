@@ -19,7 +19,7 @@ namespace FPSShooter.Main
 
         private void InitializeServices(ServiceLocatorModel data)
         {
-            cameraService = new CameraService(data.virtualCamera);
+            //cameraService = new CameraService(data.virtualCamera);
             playerService = new PlayerService(data.PlayerModel);
             inputService = new InputService();
         }
@@ -30,7 +30,7 @@ namespace FPSShooter.Main
 
             PlayerController playerController = playerService.GetPlayerController();
 
-            cameraService.SetTarget(playerController.GetCameraTargetTransform());
+            //cameraService.SetTarget(playerController.GetCameraTargetTransform());
         }
 
         public void Start()
@@ -40,7 +40,7 @@ namespace FPSShooter.Main
 
         public void Update()
         {
-            cameraService.Update();
+            //cameraService.Update();
             inputService.Update();
         }
     }

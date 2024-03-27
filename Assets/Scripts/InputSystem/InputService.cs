@@ -14,6 +14,7 @@ namespace FPSShooter.InputSystem
         public static event Action OnSprintCanceled;
         public InputService()
         {
+            return;
             if (playerInputActions == null)
             {
                 playerInputActions = new PlayerInputAction();
@@ -25,16 +26,19 @@ namespace FPSShooter.InputSystem
 
         private void Sprint_canceled(InputAction.CallbackContext obj)
         {
+            return;
             OnSprintCanceled?.Invoke();
         }
 
         private void Sprint_performed(InputAction.CallbackContext obj)
         {
+            return;
             OnSprint?.Invoke();
         }
 
         public void Update()
         {
+            return;
             Vector2 moveData = playerInputActions.Player.Movement.ReadValue<Vector2>();
 
             OnMove?.Invoke(moveData);
@@ -47,6 +51,7 @@ namespace FPSShooter.InputSystem
 
         ~InputService()
         {
+            return;
             playerInputActions.Player.Sprint.performed -= Sprint_performed;
             playerInputActions.Player.Sprint.canceled -= Sprint_canceled;
         }

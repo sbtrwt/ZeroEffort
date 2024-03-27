@@ -43,17 +43,18 @@ namespace FPSShooter.Player
         {
             PlayerView playerPrefab = playerModel.PlayerSO.PlayerView;
             playerView = Object.Instantiate(playerPrefab, playerPrefab.transform.position, playerPrefab.transform.rotation);
-            playerView.SetController(this);
+            //playerView.SetController(this);
         }
 
         public void OnMove(Vector2 target)
         {
-            playerView.Move(target, currSpeed);
+            //playerView.Move(target, currSpeed);
         }
 
         public Transform GetCameraTargetTransform()
         {
-            return playerView.GetCameraTarget();
+            return null;
+            //return playerView.GetCameraTarget();
         }
 
         ~PlayerController()
