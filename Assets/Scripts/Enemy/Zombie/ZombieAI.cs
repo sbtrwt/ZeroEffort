@@ -14,7 +14,7 @@ public class ZombieAI : MonoBehaviour
     }
     private void Update()
     {
-       
+        SetTarget(target.position);
     }
 
     public void SetTarget(Vector3 target)
