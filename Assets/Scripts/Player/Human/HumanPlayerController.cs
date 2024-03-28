@@ -8,5 +8,9 @@ namespace FPSShooter.Player.Human
 {
     public class HumanPlayerController : PlayerController
     {
+        public HumanPlayerController(PlayerModel model) :base(model)
+        {
+
+        }
     }
 }
