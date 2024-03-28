@@ -21,12 +21,12 @@ namespace FPSShooter.Enemy
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             float distance = Vector2.Distance(target.position, animator.transform.position);
-            Debug.Log("Chase " + distance.ToString());
+            
             if (distance > chasingDistance)
             {
                 animator.SetBool("IsChasing", false);
             }
-            animator.transform.position =   Vector2.MoveTowards(animator.transform.position, target.position, speed * Time.deltaTime);
+            //animator.transform.position =   Vector2.MoveTowards(animator.transform.position, target.position, speed * Time.deltaTime);
           
            
         }
