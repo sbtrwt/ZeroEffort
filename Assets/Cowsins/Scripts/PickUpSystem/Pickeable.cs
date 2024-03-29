@@ -39,7 +39,7 @@ public class Pickeable : Interactable
         pickeable = false;
         obj = transform.Find("Graphics");
         //player = GameObject.FindGameObjectWithTag("Player").transform;
-        player = CommonService.Player.transform;
+        player = CommonService.Instance.Player.transform;
     }
     private void Update() => Movement();
 

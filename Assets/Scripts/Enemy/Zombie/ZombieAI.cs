@@ -13,7 +13,7 @@ namespace FPSShooter.Enemy
         private Transform target;
         private void Start()
         {
-            target = CommonService.Player.transform;
+            target = CommonService.Instance.Player.transform;
             navmeshAgent.SetDestination(target.position);
         }
         private void Update()

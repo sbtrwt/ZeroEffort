@@ -65,7 +65,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         // Initial settings 
         //player = GameObject.FindGameObjectWithTag("Player").transform;
-        player = CommonService.Player.transform;
+        player = CommonService.Instance.Player.transform;
 
 
         // UI 
@@ -78,7 +78,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             Destroy(shieldSlider);
         }
         //player = GameObject.FindGameObjectWithTag("Player").transform;
-        player = CommonService.Player.transform;
+        player = CommonService.Instance.Player.transform;
     }
 
     // Update is called once per frame

@@ -27,9 +27,9 @@ namespace cowsins
         void Start()
         {
             //player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-            player = CommonService.Player.GetComponent<PlayerMovement>();
+            player = CommonService.Instance.Player.GetComponent<PlayerMovement>();
             //wp = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponController>();
-            wp = CommonService.Player.GetComponent<WeaponController>();
+            wp = CommonService.Instance.Player.GetComponent<WeaponController>();
             origRot = transform.localRotation;
             origPos = transform.localPosition;
         }

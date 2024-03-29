@@ -37,7 +37,7 @@ public class CheckPoint : MonoBehaviour
     {
         // SomeInitialStuff
         //Player = GameObject.FindGameObjectWithTag("Player").transform;
-        Player = CommonService.Player.transform;
+        Player = CommonService.Instance.Player.transform;
         StartCoroutine(UpdateValue());
     }
 

@@ -43,7 +43,7 @@ public class DoorInteractable : Interactable
         // Initial settings
         closedRot = doorPivot.rotation;
         //pl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        pl = CommonService.Player.GetComponent<PlayerMovement>();
+        pl = CommonService.Instance.Player.GetComponent<PlayerMovement>();
         interactText = openInteractionText; 
     }
     private void Update()
