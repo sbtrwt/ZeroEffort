@@ -12,7 +12,7 @@ namespace FPSShooter.Enemy
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = CommonService.Player.transform;
 
        
         }
@@ -22,10 +22,10 @@ namespace FPSShooter.Enemy
         {
             float distance = Vector2.Distance(target.position, animator.transform.position);
             
-            if (distance > chasingDistance)
-            {
-                animator.SetBool("IsChasing", false);
-            }
+            //if (distance > chasingDistance)
+            //{
+            //    animator.SetBool("IsChasing", false);
+            //}
             //animator.transform.position =   Vector2.MoveTowards(animator.transform.position, target.position, speed * Time.deltaTime);
           
            

@@ -26,7 +26,8 @@ public class Interactable : MonoBehaviour
     private void Start()
     {
         interactable = false;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = CommonService.Player.transform;
     }
     /// <summary>
     /// Make sure to override this on your new custom class.

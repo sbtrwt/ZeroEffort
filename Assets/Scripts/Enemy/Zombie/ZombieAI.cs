@@ -9,7 +9,7 @@ public class ZombieAI : MonoBehaviour
     private Transform target;
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = CommonService.Player.transform;
         navmeshAgent.SetDestination(target.position);
     }
     private void Update()
