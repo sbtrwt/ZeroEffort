@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FPSShooter.Enemy
 {
-    public class IdleState : StateMachineBehaviour
+    public class AttackState : StateMachineBehaviour
     {
         private Transform target;
         [SerializeField]private ZombieAI zombieAI;

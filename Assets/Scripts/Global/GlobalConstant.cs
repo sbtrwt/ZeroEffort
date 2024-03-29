@@ -8,5 +8,11 @@ namespace FPSShooter.Global
 {
     public class GlobalConstant
     {
+        public class ZombieConst
+        {
+            public const float ChasingDistance = 1f;
+            public const float AttackingDistance =1f;
+        }
+       
     }
 }

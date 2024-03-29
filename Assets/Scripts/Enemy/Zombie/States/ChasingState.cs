@@ -1,3 +1,4 @@
+using FPSShooter.Global;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,28 +8,20 @@ namespace FPSShooter.Enemy
     public class ChasingState : StateMachineBehaviour
     {
         private Transform target;
-        private float speed = 3;
-        private float chasingDistance = 2f;
+       
+        [SerializeField] private ZombieAI zombieAI;
+
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             target = CommonService.Player.transform;
-
-       
+            zombieAI = animator.gameObject.GetComponent<ZombieAI>();
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            float distance = Vector2.Distance(target.position, animator.transform.position);
-            
-            //if (distance > chasingDistance)
-            //{
-            //    animator.SetBool("IsChasing", false);
-            //}
-            //animator.transform.position =   Vector2.MoveTowards(animator.transform.position, target.position, speed * Time.deltaTime);
-          
-           
+            zombieAI.UpdateChasing();
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
