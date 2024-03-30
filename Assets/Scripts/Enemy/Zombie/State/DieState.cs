@@ -7,13 +7,14 @@ namespace FPSShooter.Enemy
     {
         public Zombie Owner { get; set; }
         private GenericStateMachine<T> stateMachine;
-
+        private const string ANIM_NAME = "_";
 
         public DieState(GenericStateMachine<T> stateMachine) => this.stateMachine = stateMachine;
 
         public void OnStateEnter()
         {
             Owner.ShowDieVisual();
+            Owner.PlayAnimationByState(ANIM_NAME);
         }
         public void Update()
         {

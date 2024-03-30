@@ -5,6 +5,7 @@
         IDLE,
         CHASING,
         ATTACKING,
-        DIE
+        DIE,
+        DAMAGE  
     }
 }
