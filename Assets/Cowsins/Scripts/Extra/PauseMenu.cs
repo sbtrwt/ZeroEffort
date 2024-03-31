@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 namespace cowsins
 {
     public class PauseMenu : MonoBehaviour
@@ -8,22 +8,26 @@ namespace cowsins
 
         public static bool isPaused { get; private set; }
 
-        [HideInInspector]public PlayerStats stats;
+        [HideInInspector] public PlayerStats stats;
 
         [SerializeField] private CanvasGroup menu;
 
         [SerializeField] private float fadeSpeed;
 
+        Scene scene;
+
         private void Awake()
         {
+            scene = SceneManager.GetActiveScene();
             if (Instance != null && Instance != this) Destroy(this);
             else Instance = this;
 
             isPaused = false;
+            if (scene.buildIndex == 0) return;
             menu.gameObject.SetActive(false);
             menu.alpha = 0;
         }
-        
+
         private void Update()
         {
             if (InputManager.pausing) isPaused = !isPaused;
@@ -34,12 +38,13 @@ namespace cowsins
                 if (!menu.gameObject.activeSelf)
                 {
                     menu.gameObject.SetActive(true);
-                    menu.alpha = 0; 
+                    menu.alpha = 0;
                 }
                 if (menu.alpha < 1) menu.alpha += Time.deltaTime * fadeSpeed;
             }
             else
             {
+                if (scene.buildIndex == 0) return;
                 menu.alpha -= Time.deltaTime * fadeSpeed;
                 if (menu.alpha <= 0) menu.gameObject.SetActive(false);
             }
@@ -69,6 +74,11 @@ namespace cowsins
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
+        }
+
+        public void LoadBuildIndexScene(int i)
+        {
+            SceneManager.LoadScene(i); 
         }
 
     }

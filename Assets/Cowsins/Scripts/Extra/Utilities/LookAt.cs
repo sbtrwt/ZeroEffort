@@ -9,6 +9,6 @@ public class LookAt : MonoBehaviour
 
     private void Start() => Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-    private void Update() => transform.LookAt(new Vector3(Player.position.x,transform.position.y, Player.position.z));   
+    private void Update() => transform.LookAt(new Vector3(Player.position.x,transform.position.y, Player.position.z));
 }
 }
