@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FPSShooter.Enemy.Zombie
+namespace FPSShooter.Enemy
 {
     public class ZombieEnemyController : EnemyController
     {
