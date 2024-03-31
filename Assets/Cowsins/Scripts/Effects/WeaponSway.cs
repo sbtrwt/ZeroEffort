@@ -71,7 +71,8 @@ public class WeaponSway : MonoBehaviour
         {
 			initialPosition = transform.localPosition;
 			initialRotation = transform.localRotation;
-			player = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponController>();
+			//player = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponController>();
+			player = CommonService.Instance.Player.GetComponent<WeaponController>();
 			sway = SimpleSway;
 		}
 		else
