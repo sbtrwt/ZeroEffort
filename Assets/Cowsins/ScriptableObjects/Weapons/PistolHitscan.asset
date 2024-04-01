@@ -31,11 +31,11 @@ MonoBehaviour:
   explosionVFX: {fileID: 0}
   continuousFire: 0
   fireRate: 0.3
-  reloadTime: 1.2
+  reloadTime: 2
   coolSpeed: 0.3
   cooledPercentageAfterOverheat: 0.6
   infiniteBullets: 0
-  magazineSize: 17
+  magazineSize: 13
   bulletsPerFire: 1
   ammoCostPerFire: 1
   bulletRange: 100
@@ -135,7 +135,7 @@ MonoBehaviour:
   damageReductionMultiplier: 1
   criticalDamageMultiplier: 2
   limitedMagazines: 1
-  totalMagazines: 3
+  totalMagazines: 6
   showBulletShells: 1
   bulletHoleImpact:
     defaultImpact: {fileID: 2462405574108921655, guid: e6d36bb0ebdf6cc4dacdeee8b6e8a0ce, type: 3}
