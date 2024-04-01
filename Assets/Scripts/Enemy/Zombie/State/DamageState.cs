@@ -1,6 +1,5 @@
 ﻿using FPSShooter.StateMachine;
 using UnityEngine;
-
 namespace FPSShooter.Enemy
 {
     public class DamageState<T> : IState where T : Zombie
@@ -13,29 +12,28 @@ namespace FPSShooter.Enemy
 
         public void OnStateEnter()
         {
-            currentDamageAnimationTime = Owner.DamageAnimationTime;
-            Owner.PlayAnimationByState(ANIM_NAME);
+            Debug.Log("Enter Damage");
+            Owner.SetSpeedZero();
         }
+
         public void Update()
         {
-            currentDamageAnimationTime -= Time.deltaTime;
-            if(currentDamageAnimationTime <= 0)
+            if (Owner.IsAttacking())
             {
-                if (Owner.IsInsideAttackRadius())
-                {
-                    stateMachine.ChangeState(States.ATTACKING);
-                }
-                else
-                {
-                    stateMachine.ChangeState(States.CHASING);
-                }
+                Debug.Log("Working");
+                stateMachine.ChangeState(States.ATTACKING);
+            }
+            else
+            {
+                Debug.Log("Working2");
+                stateMachine.ChangeState(States.CHASING);
             }
         }
 
         public void OnStateExit()
         {
+            
         }
-
 
     }
 }

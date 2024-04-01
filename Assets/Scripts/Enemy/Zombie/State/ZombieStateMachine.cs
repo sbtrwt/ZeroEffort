@@ -22,7 +22,7 @@ namespace FPSShooter.Enemy
             States.Add(StateMachine.States.CHASING, new ChasingState<Zombie>(this));
             States.Add(StateMachine.States.ATTACKING, new AttakingState<Zombie>(this));
             States.Add(StateMachine.States.DIE, new DieState<Zombie>(this));
-           
+            States.Add(StateMachine.States.DAMAGE, new DamageState<Zombie>(this));
         }
     }
 }

@@ -133,7 +133,7 @@ MonoBehaviour:
   applyDamageReductionBasedOnDistance: 0
   minimumDistanceToApplyDamageReduction: 40.3
   damageReductionMultiplier: 1
-  criticalDamageMultiplier: 1.5
+  criticalDamageMultiplier: 2
   limitedMagazines: 1
   totalMagazines: 3
   showBulletShells: 1

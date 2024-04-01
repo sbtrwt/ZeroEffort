@@ -188,7 +188,7 @@ public class Weapon_SO : ScriptableObject
 
     [Tooltip("Adjust the damage reduction amount"), Range(.1f, 1)] public float damageReductionMultiplier;
 
-    [Range(1, 2)] [Tooltip("Damage will get multiplied by this number when hitting a critical shot")] public float criticalDamageMultiplier;
+    [Range(1, 10)] [Tooltip("Damage will get multiplied by this number when hitting a critical shot")] public float criticalDamageMultiplier;
 
     [Tooltip("Turn this true for a more realistic approach. It will stop using infinite magazines, so you will have to pick new magazines to add more bullets.")] public bool limitedMagazines;
 

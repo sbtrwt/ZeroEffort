@@ -10,8 +10,7 @@ namespace FPSShooter.Sound
         {
             if (other.CompareTag("Player"))
             {
-                List<AudioClip> jumpScareSoundEffects = soundSO.jumpScareSoundEffects;
-                AudioClip clip = jumpScareSoundEffects[Random.Range(0, jumpScareSoundEffects.Count)];
+                AudioClip clip = soundSO.GetRandomJumpScareSound();
                 audioSource.PlayOneShot(clip);
 
                 GetComponent<Collider>().enabled = false;

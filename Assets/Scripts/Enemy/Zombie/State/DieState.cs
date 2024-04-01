@@ -1,5 +1,6 @@
-﻿using FPSShooter.StateMachine;
-
+﻿using cowsins;
+using FPSShooter.StateMachine;
+using UnityEngine;
 
 namespace FPSShooter.Enemy
 {
@@ -13,9 +14,11 @@ namespace FPSShooter.Enemy
 
         public void OnStateEnter()
         {
-            Owner.ShowDieVisual();
-            Owner.PlayAnimationByState(ANIM_NAME);
+            Owner.SetSpeedZero();
+            Owner.OnDie();
+            SoundManager.Instance.PlaySound(Owner.GetSoundSO().GetRandomDieSound(), 0, 0, false, 0);
         }
+
         public void Update()
         {
 
@@ -23,8 +26,7 @@ namespace FPSShooter.Enemy
 
         public void OnStateExit()
         {
+
         }
-
-
     }
 }

@@ -7,26 +7,23 @@ namespace FPSShooter.Enemy
     {
         public Zombie Owner { get; set; }
         private GenericStateMachine<T> stateMachine;
-        private const string ANIM_NAME = "Chasing";
 
         public ChasingState(GenericStateMachine<T> stateMachine) => this.stateMachine = stateMachine;
 
         public void OnStateEnter()
         {
-            Owner.PlayAnimationByState(ANIM_NAME);
-            Debug.Log("State " + ANIM_NAME);
+            Owner.SetRunningSpeed();
         }
+
         public void Update()
         {
-           Owner.ChasePlayer();
-            if (Owner.IsInsideAttackRadius())
-            {
-                stateMachine.ChangeState(States.ATTACKING);
-            }
+            Owner.ChasePlayer();
+            Owner.CheckIsPlayerInAttackRaidus();
         }
 
         public void OnStateExit()
         {
+
         }
 
 
