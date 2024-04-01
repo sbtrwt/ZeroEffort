@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   interactText: CarPart
-  audioClip: {fileID: 8300000, guid: 8b5df127ab7f62e4498e03ed0488974a, type: 3}
+  soundSO: {fileID: 11400000, guid: 01415386a97cf124bbbab55137206a33, type: 2}
 --- !u!95 &2985446894554083045
 Animator:
   serializedVersion: 5

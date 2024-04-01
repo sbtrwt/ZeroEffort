@@ -122,6 +122,7 @@ MonoBehaviour:
   interactable: 0
   interactText: Key
   id: 1
+  soundSO: {fileID: 11400000, guid: 01415386a97cf124bbbab55137206a33, type: 2}
 --- !u!95 &2964126585738277024
 Animator:
   serializedVersion: 5

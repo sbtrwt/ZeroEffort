@@ -117,6 +117,7 @@ namespace FPSShooter.Enemy
         {
             const string DAMAGE = "Damage";
             animator.SetTrigger(DAMAGE);
+            SoundManager.Instance.PlaySound(soundSO.GetZombieHitSound(), 0, 0, false, 0, .7f);
             stateMachine.ChangeState(States.DAMAGE);
         }
 
@@ -211,7 +212,9 @@ namespace FPSShooter.Enemy
         public void AttackPlayerTarget()
         {
             target.GetComponent<IDamageable>().Damage(attackDamage);
-            SoundManager.Instance.PlaySound(soundSO.GetRandomAttackSound(), 0, 0, false, 0);
+            CamShake.instance.ShootShake(.25f);
+            SoundManager.Instance.PlaySound(soundSO.GetPlayerDamageClip(), 0, 0, false, 0);
+            SoundManager.Instance.PlaySound(soundSO.GetRandomoZombieAttackSound(), 0, 0, false, 0);
         }
 
         private bool FireRay()
@@ -230,7 +233,7 @@ namespace FPSShooter.Enemy
         }
 
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             Gizmos.DrawWireSphere(transform.position, attackRadius);
             Gizmos.color = Color.yellow;
@@ -238,8 +241,8 @@ namespace FPSShooter.Enemy
 
 
             if (target == null) return;
-            Vector3 direction = (target.position - transform.position).normalized; 
-            Debug.Log(target.position,target); 
+            Vector3 direction = (target.position - transform.position).normalized;
+            Debug.Log(target.position, target);
 
 
             if (Physics.Raycast(transform.position, direction, out RaycastHit hit, Mathf.Infinity, hitLayer))
@@ -252,6 +255,11 @@ namespace FPSShooter.Enemy
                 }
             }
             Gizmos.DrawRay(transform.position, direction);
+        }
+
+        public virtual void PlayFootStep()
+        {
+            SoundManager.Instance.PlaySound(soundSO.GetZombieFootStepSound(), 0, 0, false, 0, .7f);
         }
     }
 }

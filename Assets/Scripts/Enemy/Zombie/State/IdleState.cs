@@ -1,4 +1,6 @@
-﻿using FPSShooter.StateMachine;
+﻿using cowsins;
+using FPSShooter.Sound;
+using FPSShooter.StateMachine;
 using UnityEngine;
 
 namespace FPSShooter.Enemy
@@ -23,6 +25,7 @@ namespace FPSShooter.Enemy
         public void OnStateExit()
         {
             Owner.PlayChasing();
+            SoundManager.Instance.PlaySound(Owner.GetSoundSO().GetRandomoZombieAttackSound(), 0, .2f, false, 0);    
         }
     }
 }

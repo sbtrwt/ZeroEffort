@@ -187,8 +187,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.14242668
-  m_Center: {x: -0.06691212, y: -7.066279e-11, z: 0.00000002073277}
+  m_Radius: 0.1698304
+  m_Center: {x: -0.066912115, y: 0.027403712, z: 0.000000019392134}
 --- !u!54 &41158096033383784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -281,8 +281,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.14242668
-  m_Center: {x: -0.06691212, y: -7.066279e-11, z: 0.00000002073277}
+  m_Radius: 0.16966869
+  m_Center: {x: -0.06691206, y: 0.027242005, z: 0.00000001940004}
 --- !u!1 &367085810351286893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,7 +3470,7 @@ GameObject:
   - component: {fileID: 1605890310788805257}
   - component: {fileID: 682944581930950300}
   m_Layer: 7
-  m_Name: TZ_Hulk
+  m_Name: Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   shieldSlider: {fileID: 0}
   showUI: 0
-  damagePopUp: {fileID: 0}
+  damagePopUp: {fileID: 7809040584024702416, guid: 606941a26ff1c814391ed7f66dfa9f5d, type: 3}
   shieldColor: {r: 0, g: 0, b: 0, a: 0}
   healthColor: {r: 0, g: 0, b: 0, a: 0}
   xVariation: 0
@@ -3591,6 +3591,9 @@ MonoBehaviour:
   - {fileID: 7568199019215907709}
   attackRadius: 3.1
   chasingRadius: 10
+  hitLayer:
+    serializedVersion: 2
+    m_Bits: 3221225984
   damageAnimationTime: 1
   playerDamageAmount: 3
   speed: 5

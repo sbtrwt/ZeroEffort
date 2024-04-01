@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using cowsins;
 using System;
+using FPSShooter.Sound;
 
 public class Door : Interactable
 {
@@ -12,6 +13,7 @@ public class Door : Interactable
 
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private int keyid;
+    [SerializeField] private SoundSO soundSO;
 
     public override void Interact()
     {
@@ -19,6 +21,7 @@ public class Door : Interactable
         {
             return;
         }
+        SoundManager.Instance.PlaySound(soundSO.doorSound,0,0,false,0,1f);
         doorAnimator.Play(DOOR);
     }
 }
