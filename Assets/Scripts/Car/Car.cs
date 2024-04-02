@@ -54,8 +54,10 @@ namespace FPSShooter.Car
                 timerText.text = currTimeToGrabTheCar.ToString("0.0");
                 if (currTimeToGrabTheCar <= 0)
                 {
-                    //CommonService.Instance.Player.GetComponent<IDamageable>().Damage(100);
-                    //isGameOver = true;
+                    audioSource.Stop();
+                    timerText.gameObject.SetActive(true);
+                    CommonService.Instance.Player.GetComponent<IDamageable>().Damage(100);
+                    isGameOver = true;
                 }
             }
         }

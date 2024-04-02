@@ -8,6 +8,7 @@ public class LinkedIn : MonoBehaviour
 
     public void OnClickLinkedIn()
     {
+        Debug.Log("Working");
         Application.OpenURL(linkedInIdURL); 
     }
 }
