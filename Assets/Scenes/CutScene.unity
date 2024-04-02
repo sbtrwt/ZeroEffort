@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 483786810}
   - component: {fileID: 483786809}
   m_Layer: 5
-  m_Name: Shobit
+  m_Name: Shobhit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.23333333
+  m_VoxelSize: 0.26666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
@@ -1805,7 +1805,7 @@ GameObject:
   - component: {fileID: 1160103826}
   - component: {fileID: 1160103825}
   m_Layer: 5
-  m_Name: Shobit (1)
+  m_Name: Shobhit (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
