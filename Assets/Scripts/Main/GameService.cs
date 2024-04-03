@@ -1,3 +1,4 @@
+using FPSShooter.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,13 @@ namespace FPSShooter.Main
         private void Start()
         {
             serviceLocator = new ServiceLocator(serviceLocatorData);
+
             serviceLocator.Start();
         }
-    }
 
+        private void Update()
+        {
+            serviceLocator.Update();
+        }
+    }
 }

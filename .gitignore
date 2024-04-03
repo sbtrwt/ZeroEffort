@@ -70,3 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+ZeroEffort/ZERO EFFORT_Data/level0.resS
+ZeroEffort/ZERO EFFORT_Data/level1.resS
+ZeroEffort/ZERO EFFORT_Data/level2.resS

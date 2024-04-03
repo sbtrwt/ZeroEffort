@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace FPSShooter.Interfaces
 {
-    public interface IMovable
+    public interface IMovable   
     {
-        void OnMove();
+        void OnMove(Vector2 target);
     }
 }
