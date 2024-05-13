@@ -2,6 +2,7 @@
 using FPSShooter.StateMachine;
 using UnityEngine;
 
+
 namespace FPSShooter.Enemy
 {
     public class DieState<T> : IState where T : Zombie
