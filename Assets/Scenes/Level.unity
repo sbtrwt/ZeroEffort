@@ -1652,6 +1652,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8220588088617845997, guid: 26ae7f1fca8299d4b90c293c7b8419eb, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220588088617845997, guid: 26ae7f1fca8299d4b90c293c7b8419eb, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 68bd056e55b4df2468515b260d67827c, type: 2}
+    - target: {fileID: 8220588088617845997, guid: 26ae7f1fca8299d4b90c293c7b8419eb, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220588088617845997, guid: 26ae7f1fca8299d4b90c293c7b8419eb, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8220588088651884037, guid: 26ae7f1fca8299d4b90c293c7b8419eb, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
