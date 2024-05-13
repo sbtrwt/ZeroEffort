@@ -1,6 +1,5 @@
 ﻿using FPSShooter.Enemy;
 
-
 namespace FPSShooter.StateMachine
 {
     public interface IState

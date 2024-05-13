@@ -12,7 +12,7 @@ namespace FPSShooter.Enemy
 
         public void OnStateEnter()
         {
-            Debug.Log("Enter Damage");
+           
             Owner.SetSpeedZero();
         }
 
@@ -20,12 +20,12 @@ namespace FPSShooter.Enemy
         {
             if (Owner.IsAttacking())
             {
-                Debug.Log("Working");
+                
                 stateMachine.ChangeState(States.ATTACKING);
             }
             else
             {
-                Debug.Log("Working2");
+              
                 stateMachine.ChangeState(States.CHASING);
             }
         }
