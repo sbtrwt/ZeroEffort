@@ -9,7 +9,7 @@ In this game I worked as a team member where I developed states of zombie like I
 - Singleton design pattern
   
 ### HOW TO PLAY
-- wasd keys for movement
+- WASD keys for movement
 - Mouse for aim the target and camera move
 - Click for shoot and interact
 - Shift to move fast
