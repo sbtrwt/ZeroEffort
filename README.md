@@ -1,4 +1,4 @@
-# FPS-Shooter
+# ZERO EFFORT ( FPS-Shooter )
 This is 3D FPS game. Where player has to collect car parts to escape the maze. Zombies are obstacles to clear with limited resource like limited bullets.
 
 In this game I worked as a team member where I developed states of zombie like Idle, Chasing, Attacking and Died using state machine.
